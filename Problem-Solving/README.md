@@ -6,7 +6,7 @@ This folder contains solutions to various programming problems from different pl
 
 - **LeetCode:** Solutions to LeetCode problems.
 - **HackerRank:** Solutions to HackerRank challenges.
-- **Exercism:** Solutions to Exercism challenges.
+- **Exercism(./Exercism):** Solutions to Exercism challenges.
 - ...
 
 ## How to Navigate

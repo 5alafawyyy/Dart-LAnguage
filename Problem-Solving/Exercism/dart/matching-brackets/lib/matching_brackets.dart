@@ -20,7 +20,6 @@ class MatchingBrackets {
         stack.add(currentBracket);
       }
     }
-
     return stack.isEmpty;
   }
 }
