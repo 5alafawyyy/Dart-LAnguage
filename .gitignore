@@ -1,0 +1,7 @@
+# Ignore specific file
+exercism.exe
+LICENSE
+
+# Ignore all files in a directory
+
+# Ignore all .log files
