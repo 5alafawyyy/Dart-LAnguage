@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "armstrong-numbers",
+            "cwd": "Problem-Solving\\Exercism\\dart\\armstrong-numbers",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "binary-search-tree",
+            "cwd": "Problem-Solving\\Exercism\\dart\\binary-search-tree",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "bob",
+            "cwd": "Problem-Solving\\Exercism\\dart\\bob",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "diamond",
+            "cwd": "Problem-Solving\\Exercism\\dart\\diamond",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "difference-of-squares",
+            "cwd": "Problem-Solving\\Exercism\\dart\\difference-of-squares",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "grains",
+            "cwd": "Problem-Solving\\Exercism\\dart\\grains",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "hello-world",
+            "cwd": "Problem-Solving\\Exercism\\dart\\hello-world",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "high-scores",
+            "cwd": "Problem-Solving\\Exercism\\dart\\high-scores",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "leap",
+            "cwd": "Problem-Solving\\Exercism\\dart\\leap",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "matching-brackets",
+            "cwd": "Problem-Solving\\Exercism\\dart\\matching-brackets",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "prime-factors",
+            "cwd": "Problem-Solving\\Exercism\\dart\\prime-factors",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "scrabble-score",
+            "cwd": "Problem-Solving\\Exercism\\dart\\scrabble-score",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "secret-handshake",
+            "cwd": "Problem-Solving\\Exercism\\dart\\secret-handshake",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "two-fer",
+            "cwd": "Problem-Solving\\Exercism\\dart\\two-fer",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "word-count",
+            "cwd": "Problem-Solving\\Exercism\\dart\\word-count",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}
