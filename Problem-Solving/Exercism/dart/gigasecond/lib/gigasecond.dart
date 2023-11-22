@@ -1,4 +1,5 @@
 DateTime addGigasecondTo(final DateTime dateTime) {
-  // Replace the throw call and put your code here
-  throw UnimplementedError();
+  int gigasecond = 1000000000;
+
+  return dateTime.add(Duration(seconds: gigasecond));
 }
