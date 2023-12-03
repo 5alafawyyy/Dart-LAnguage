@@ -1,4 +1,4 @@
-# Flutter Advanced Course - BLoC and MVVM Pattern (https://www.udemy.com/course/flutter-bloc-pattern-from-zero-to-hero-in-arabic/) [Arabic][2023]
+# [Flutter Advanced Course - BLoC and MVVM Pattern ](https://www.udemy.com/course/flutter-bloc-pattern-from-zero-to-hero-in-arabic/) [Arabic][2023]
 
 ## Overview
 
