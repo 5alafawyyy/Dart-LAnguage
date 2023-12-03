@@ -1,4 +1,4 @@
-# Flutter Advanced Course - BLoC and MVVM Pattern [Arabic][2023](https://www.udemy.com/course/flutter-bloc-pattern-from-zero-to-hero-in-arabic/)
+# Flutter Advanced Course - BLoC and MVVM Pattern (https://www.udemy.com/course/flutter-bloc-pattern-from-zero-to-hero-in-arabic/) [Arabic][2023]
 
 ## Overview
 
@@ -31,8 +31,8 @@ The course is divided into 3 sections, comprising a total of 91 lectures with a 
 
 ## How to Use This Repository
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
-2. Navigate to the project directory: `cd your-repo`
+1. Clone the repository: `git clone https://github.com/5alafawyyy/Dart-Language-Flutter-Framework.git`
+2. Navigate to the project directory: `cd Playlists/Flutter Advanced Course Bloc and MVVM`
 3. Follow the course lectures and refer to the corresponding code files in the repository.
 
 ## Instructor
