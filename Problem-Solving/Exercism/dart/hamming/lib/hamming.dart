@@ -1,5 +1,5 @@
 class Hamming {
-  distance(String s, String t) {
+  int distance(String s, String t) {
     List<String> s1 = s.split("").toList();
     List<String> s2 = t.split("").toList();
     int distanceCount = 0;
