@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "585513886224",
+    "project_id": "chat-app-e65e4",
+    "storage_bucket": "chat-app-e65e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585513886224:android:12662fd8fc7620453ba095",
+        "android_client_info": {
+          "package_name": "com.khalafawy.chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzZ_qetb68ZjIZsX0tBMIgAICbLGSNbwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,18 +1,18 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../cubits/weather_cubit.dart';
 
 class SearchPage extends StatelessWidget {
-  SearchPage({
+  const SearchPage({
     super.key,
   });
-  String? cityName;
+ 
   @override
   Widget build(BuildContext context) {
-    WeatherCubit cubit = Provider.of<WeatherCubit>(context);
+    WeatherCubit cubit = BlocProvider.of<WeatherCubit>(context);  String? cityName;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search a City'),
@@ -22,7 +22,7 @@ class SearchPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: TextField(
             onChanged: (data) {
-             cityName = data;
+              cityName = data;
               cubit.cityName = data;
             },
             onSubmitted: (data) async {

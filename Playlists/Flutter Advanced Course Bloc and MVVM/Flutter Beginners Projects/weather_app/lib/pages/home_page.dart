@@ -1,16 +1,14 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:weather_app/cubits/weather_cubit.dart';
-import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/pages/search_page.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var cubit = Provider.of<WeatherCubit>(context);
+    var cubit = BlocProvider.of<WeatherCubit>(context);
   return Scaffold(
       appBar: AppBar(
         actions: [
