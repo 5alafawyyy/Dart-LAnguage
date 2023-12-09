@@ -1,5 +1,4 @@
 import 'package:chat_app/cubits/user_cubit/user_cubit.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/models/message_model.dart';
@@ -10,14 +9,24 @@ import '../cubits/chat_cubit/chat_cubit.dart';
 
 class ChatPage extends StatelessWidget {
   static const String id = 'ChatPage';
-  ChatPage({super.key, this.user});
-  final User? user;
+  ChatPage({super.key});
+
+  static Route route() {
+    return MaterialPageRoute<void>(
+      builder: (_) => BlocProvider(
+        create: (context) => ChatCubit()..getMessages(),
+        child: ChatPage(),
+      ),
+      settings: const RouteSettings(name: id),
+    );
+  }
 
   final ScrollController _controller = ScrollController();
   final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final user = BlocProvider.of<UserCubit>(context).user;
     var email =
         user?.email ?? (ModalRoute.of(context)!.settings.arguments.toString());
 

@@ -1,9 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../../helper/cache_helper.dart';
+
 // States
 abstract class UserState {}
 
+ 
 class UserLoggedIn extends UserState {
   final User user;
 
@@ -36,13 +39,13 @@ class SignInUser extends UserEvent {
 class UserCubit extends Cubit<UserState> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  UserCubit() : super(UserLoggedOut());
-
+  UserCubit() : super( UserLoggedOut());
+  User? user;
   void checkUserLoggedIn() async {
     try {
-      User? user = _auth.currentUser;
+      user = _auth.currentUser;
       if (user != null) {
-        emit(UserLoggedIn(user));
+        emit(UserLoggedIn(user!));
       } else {
         emit(UserLoggedOut());
       }
@@ -54,10 +57,10 @@ class UserCubit extends Cubit<UserState> {
   void signOut() async {
     try {
       await _auth.signOut();
+      CacheHelper.clearData();
       emit(UserLoggedOut());
     } catch (e) {
       emit(UserError('Error signing out'));
     }
   }
-
 }

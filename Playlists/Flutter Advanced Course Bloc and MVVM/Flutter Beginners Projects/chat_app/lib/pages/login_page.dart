@@ -1,5 +1,5 @@
+import 'package:chat_app/blocs/auth/auth_bloc.dart';
 import 'package:chat_app/cubits/chat_cubit/chat_cubit.dart';
-import 'package:chat_app/cubits/login_cubit/login_cubit.dart';
 import 'package:chat_app/pages/chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +21,7 @@ class LoginPage extends StatelessWidget {
     bool isLoading = false;
     String? email;
     String? password;
-    return BlocConsumer<LoginCubit, LoginStates>(
+    return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is LoginLoadingState) {
           isLoading = true;
@@ -108,11 +108,12 @@ class LoginPage extends StatelessWidget {
                     CustomButon(
                       onTap: () async {
                         if (_formKey.currentState!.validate()) {
-                          BlocProvider.of<LoginCubit>(context)
-                              .signInWithEmailAndPassword(
-                            email: email!,
-                            password: password!,
-                          );
+                          context.read<AuthBloc>().add(
+                                LoginEvent(
+                                  email: email!,
+                                  password: password!,
+                                ),
+                              );
                         }
                       },
                       text: 'LOGIN',

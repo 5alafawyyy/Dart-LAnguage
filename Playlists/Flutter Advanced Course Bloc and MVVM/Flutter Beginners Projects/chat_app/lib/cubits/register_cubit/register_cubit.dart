@@ -27,47 +27,4 @@ class RegisterCubit extends Cubit<RegisterStates> {
       emit(RegisterErrorState(e.toString()));
     }
   }
-
-  Future<void> signOut() async {
-    final result =  FirebaseAuth.instance.currentUser;
-    print(result);
-    await FirebaseAuth.instance.signOut();
- 
-  }
-
-  Future<void> deleteUserAccount() async {
-    try {
-      await FirebaseAuth.instance.currentUser!.delete();
-    } on FirebaseAuthException catch (e) {
-     print(e.toString());
-
-      if (e.code == "requires-recent-login") {
-        await _reauthenticateAndDelete();
-      } else {
-        // Handle other Firebase exceptions
-      }
-    } catch (e) {
-     print(e.toString());
-
-      // Handle general exception
-    }
-  }
-
-  Future<void> _reauthenticateAndDelete() async {
-    try {
-      final providerData = FirebaseAuth.instance.currentUser?.providerData.first;
-
-      if (AppleAuthProvider().providerId == providerData!.providerId) {
-        await FirebaseAuth.instance.currentUser!
-            .reauthenticateWithProvider(AppleAuthProvider());
-      } else if (GoogleAuthProvider().providerId == providerData.providerId) {
-        await FirebaseAuth.instance.currentUser!
-            .reauthenticateWithProvider(GoogleAuthProvider());
-      }
-
-      await FirebaseAuth.instance.currentUser?.delete();
-    } catch (e) {
-      // Handle exceptions
-    }
-  }
 }
