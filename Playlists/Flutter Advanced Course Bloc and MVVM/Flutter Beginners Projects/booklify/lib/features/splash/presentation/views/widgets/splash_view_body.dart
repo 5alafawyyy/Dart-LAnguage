@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/assets/assets.dart';
 import '../../../../../home.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -30,13 +31,10 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(255, 0, 10, 8),
-      child: Center(
-        child: Image.asset(
-          'assets/images/Logo.png',
-          width: 150.0,
-        ),
+    return Center(
+      child: Image.asset(
+        AssetsData.logo,
+        scale: 0.7,
       ),
     );
   }

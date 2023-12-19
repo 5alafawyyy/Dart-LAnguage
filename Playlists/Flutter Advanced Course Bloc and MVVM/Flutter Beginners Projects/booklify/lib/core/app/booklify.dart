@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../features/splash/presentation/views/splash_view.dart';
+import '../utils/constants/constants.dart';
 
 
 class BooklifyApp extends StatelessWidget {
@@ -11,9 +12,12 @@ class BooklifyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Booklify',
-      theme: ThemeData(
+      theme: ThemeData.dark()
+          .copyWith(
+        primaryColor: Constants.mainColor,
+        scaffoldBackgroundColor:  Constants.mainColor,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: const SplashView(),
     );
