@@ -1,13 +1,13 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-
-import '../../../../../core/utils/assets/assets.dart';
-import '../../../../../home.dart';
+import 'package:get/get.dart';
+import '../../../../../../core/utils/assets/assets.dart';
+import '../../../../../../core/utils/constants/constants.dart';
+import '../../../../home/presentation/view/home_view.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
-  const SplashViewBody({super.key});
+  const SplashViewBody({Key? key}) : super(key: key);
 
   @override
   State<SplashViewBody> createState() => _SplashViewBodyState();
@@ -20,34 +20,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   void initState() {
-    animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    );
-
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
-            .animate(animationController);
-    animationController.forward();
-
-    // Simulate some initialization work
-    // Timer(
-    //   const Duration(seconds: 3),
-    //   () {
-    //     // Navigate to the main screen after 3 seconds
-    //     Navigator.pushReplacement(
-    //       context,
-    //       MaterialPageRoute(builder: (context) => const HomeScreen()),
-    //     );
-    //   },
-    // );
+    initSlidingAnimation();
+    navigateToHomeView();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    animationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -55,16 +30,40 @@ class _SplashViewBodyState extends State<SplashViewBody>
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-          child: Image.asset(
-            AssetsData.logo,
-          ),
-        ),
-        const SizedBox(
-          height: 5.0,
-        ),
+        Image.asset(AssetsData.logo),
+        const SizedBox(height: 5.0),
         SlidingText(slidingAnimation: slidingAnimation),
       ],
     );
+  }
+
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+    animationController.forward();
+  }
+
+  void navigateToHomeView() {
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Get.to(
+          () => const HomeView(),
+          transition: Transition.fade,
+          duration: Constants.transitionDuration,
+        );
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 }
