@@ -13,7 +13,7 @@ cd path\to\your\git\repository
 rem Execute Git commands
 git add .
 git commit -m "%commit_phrase%"
-git push -u origin master
+git push -u origin main
 
 echo.
 echo Changes committed and pushed to GitHub.
