@@ -1,11 +1,11 @@
 import 'package:booklify/core/utils/router/routes_string.dart';
-import 'package:booklify/features/shared/widgets/custom_text_rich.dart';
+import 'package:booklify/core/shared/widgets/custom_text_rich.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/constants/constants.dart';
 import '../../../../../core/utils/styles/fonts.dart';
-import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../../../core/shared/widgets/shared_widgets.dart';
 import 'book_rating.dart';
 
 class BestSellerBooksListViewItem extends StatelessWidget {

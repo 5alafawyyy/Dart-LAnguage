@@ -1,7 +1,7 @@
 import 'package:booklify/core/utils/styles/fonts.dart';
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/constants/constants.dart';
-import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../../../core/shared/widgets/shared_widgets.dart';
 import 'widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {

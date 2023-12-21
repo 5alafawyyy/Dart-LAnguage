@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../../../core/shared/widgets/shared_widgets.dart';
 
 class BookDetailsViewAppBar extends StatelessWidget {
   const BookDetailsViewAppBar({

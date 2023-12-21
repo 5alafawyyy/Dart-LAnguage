@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../../../core/shared/widgets/shared_widgets.dart';
 
 class BookDetailsImage extends StatelessWidget {
   const BookDetailsImage({

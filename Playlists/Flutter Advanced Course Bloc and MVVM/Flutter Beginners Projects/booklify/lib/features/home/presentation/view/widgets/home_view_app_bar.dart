@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../core/utils/assets/assets.dart';
-import '../../../../shared/widgets/shared_widgets.dart';
+import '../../../../../core/shared/widgets/shared_widgets.dart';
 
 class HomeViewAppBar extends StatelessWidget {
   const HomeViewAppBar({

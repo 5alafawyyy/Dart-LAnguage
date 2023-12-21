@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/utils/constants/constants.dart';
-import '../../../core/utils/styles/fonts.dart';
+import '../../utils/constants/constants.dart';
+import '../../utils/styles/fonts.dart';
 
 class CustomTextRich extends StatelessWidget {
   const CustomTextRich({
