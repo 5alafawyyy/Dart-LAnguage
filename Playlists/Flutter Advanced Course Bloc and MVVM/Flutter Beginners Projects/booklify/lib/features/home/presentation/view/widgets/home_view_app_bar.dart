@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../core/utils/assets/assets.dart';
 import '../../../../../core/shared/widgets/shared_widgets.dart';
+import '../../../../../core/utils/router/routes_string.dart';
 
 class HomeViewAppBar extends StatelessWidget {
   const HomeViewAppBar({
@@ -17,7 +19,9 @@ class HomeViewAppBar extends StatelessWidget {
         fit: BoxFit.cover,
       ),
       widget2: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          GoRouter.of(context).push(RoutesStrings.searchView);
+        },
         icon: Image.asset(AssetsData.searchIcon),
         iconSize: 25.0,
         splashRadius: 15,

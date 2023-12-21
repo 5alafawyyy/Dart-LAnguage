@@ -8,10 +8,10 @@ class CustomTextRich extends StatelessWidget {
     super.key,
     required this.text,
     required this.richText,
-     this.textColor = Constants.whiteColor,
-     this.textFontSize = FontSize.s20,
-     this.fontWeight= FontWeightManager.bold,
-     this.richTextFontSize = FontSize.s16,
+    this.textColor = Constants.whiteColor,
+    this.textFontSize = FontSize.s20,
+    this.fontWeight = FontWeightManager.bold,
+    this.richTextFontSize = FontSize.s16,
   });
 
   final String text;

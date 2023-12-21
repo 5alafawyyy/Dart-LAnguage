@@ -8,8 +8,8 @@ import '../../../../../core/utils/styles/fonts.dart';
 import '../../../../../core/shared/widgets/shared_widgets.dart';
 import 'book_rating.dart';
 
-class BestSellerBooksListViewItem extends StatelessWidget {
-  const BestSellerBooksListViewItem({
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({
     super.key,
     required this.assetName,
     required this.titleText,
@@ -93,8 +93,8 @@ class BestSellerBooksListViewItem extends StatelessWidget {
   }
 }
 
-List<BestSellerBooksListViewItem> dummyData = const [
-  BestSellerBooksListViewItem(
+List<BookListViewItem> dummyData = const [
+  BookListViewItem(
     assetName: 'assets/images/book_4.png',
     titleText: 'Harry Potter and the Goblet of Fire',
     auther: 'J.K. Rowling',
@@ -102,7 +102,7 @@ List<BestSellerBooksListViewItem> dummyData = const [
     rate: 4.8,
     noOfPeopleWatched: 2390,
   ),
-  BestSellerBooksListViewItem(
+  BookListViewItem(
     assetName: 'assets/images/book_1.png',
     titleText: 'The Jungle Book',
     auther: 'Rudyard Kipling',
@@ -110,7 +110,79 @@ List<BestSellerBooksListViewItem> dummyData = const [
     rate: 4.5,
     noOfPeopleWatched: 5689,
   ),
-  BestSellerBooksListViewItem(
+  BookListViewItem(
+    assetName: 'assets/images/book_5.png',
+    titleText: 'Star Wars Return of the Jedi',
+    auther: 'James Kahn',
+    price: 19.99,
+    rate: 4.2,
+    noOfPeopleWatched: 2564,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_4.png',
+    titleText: 'Harry Potter and the Goblet of Fire',
+    auther: 'J.K. Rowling',
+    price: 19.99,
+    rate: 4.8,
+    noOfPeopleWatched: 2390,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_1.png',
+    titleText: 'The Jungle Book',
+    auther: 'Rudyard Kipling',
+    price: 24.99,
+    rate: 4.5,
+    noOfPeopleWatched: 5689,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_5.png',
+    titleText: 'Star Wars Return of the Jedi',
+    auther: 'James Kahn',
+    price: 19.99,
+    rate: 4.2,
+    noOfPeopleWatched: 2564,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_4.png',
+    titleText: 'Harry Potter and the Goblet of Fire',
+    auther: 'J.K. Rowling',
+    price: 19.99,
+    rate: 4.8,
+    noOfPeopleWatched: 2390,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_1.png',
+    titleText: 'The Jungle Book',
+    auther: 'Rudyard Kipling',
+    price: 24.99,
+    rate: 4.5,
+    noOfPeopleWatched: 5689,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_5.png',
+    titleText: 'Star Wars Return of the Jedi',
+    auther: 'James Kahn',
+    price: 19.99,
+    rate: 4.2,
+    noOfPeopleWatched: 2564,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_4.png',
+    titleText: 'Harry Potter and the Goblet of Fire',
+    auther: 'J.K. Rowling',
+    price: 19.99,
+    rate: 4.8,
+    noOfPeopleWatched: 2390,
+  ),
+  BookListViewItem(
+    assetName: 'assets/images/book_1.png',
+    titleText: 'The Jungle Book',
+    auther: 'Rudyard Kipling',
+    price: 24.99,
+    rate: 4.5,
+    noOfPeopleWatched: 5689,
+  ),
+  BookListViewItem(
     assetName: 'assets/images/book_5.png',
     titleText: 'Star Wars Return of the Jedi',
     auther: 'James Kahn',

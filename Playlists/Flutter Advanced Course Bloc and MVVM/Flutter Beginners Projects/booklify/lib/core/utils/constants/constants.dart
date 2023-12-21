@@ -6,7 +6,7 @@ class AppStrings {
 }
 
 class Constants {
-  static const Color mainColor = Color(0xFF100B20);
+  static const Color mainColor = Color.fromARGB(255, 4, 2, 10);
   static const Color greyColor = Color(0xFF616161);
   static const Color whiteColor = Color(0xFFFFFFFF);
   static const Color blackColor = Color(0xFF000000);
