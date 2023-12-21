@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-import 'best_seller_books_list_item.dart';
+import 'best_seller_books_list_view_item.dart';
 
-class BestSellerBooksList extends StatelessWidget {
-  const BestSellerBooksList({super.key});
+class BestSellerBooksListView extends StatelessWidget {
+  const BestSellerBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      // height: MediaQuery.sizeOf(context).height * 0.6,
       margin: const EdgeInsets.symmetric(horizontal: 24.0),
       child: ListView.builder(
+        shrinkWrap: true,
         itemCount: 3,
         physics: const NeverScrollableScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
-          return BestSellerBooksListItem(
+          return BestSellerBooksListViewItem(
             assetName: dummyData[index].assetName,
             titleText: dummyData[index].titleText,
             auther: dummyData[index].auther,

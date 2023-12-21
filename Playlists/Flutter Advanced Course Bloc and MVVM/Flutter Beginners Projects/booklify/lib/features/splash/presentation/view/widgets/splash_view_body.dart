@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../../core/utils/assets/assets.dart';
-import '../../../../../../core/utils/constants/constants.dart';
-import '../../../../home/presentation/view/home_view.dart';
+import '../../../../../core/utils/router/routes_string.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -52,11 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Timer(
       const Duration(seconds: 3),
       () {
-        Get.to(
-          () => const HomeView(),
-          transition: Transition.fade,
-          duration: Constants.transitionDuration,
-        );
+        GoRouter.of(context).push(RoutesStrings.home);
       },
     );
   }

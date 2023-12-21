@@ -1,37 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../features/splash/presentation/views/splash_view.dart';
 import '../utils/constants/constants.dart';
-import '../utils/styles/fonts.dart';
-import '../utils/styles/styles.dart';
+import '../utils/router/app_router.dart';
+import '../utils/styles/custom_theme_data.dart';
 
 class BooklifyApp extends StatelessWidget {
   const BooklifyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      title: 'Booklify',
+    return MaterialApp.router(
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Constants.mainColor,
-        scaffoldBackgroundColor: Constants.mainColor,
-        useMaterial3: false,
-        textTheme: const TextTheme().copyWith(
-          displayLarge: Styles().getBoldStyle(
-              fontSize: FontSize.s24, color: Constants.whiteColor),
-          headlineLarge: Styles().getSemiBoldStyle(
-              fontSize: FontSize.s16, color: Constants.whiteColor),
-          headlineMedium: Styles().getRegularStyle(
-              fontSize: FontSize.s14, color: Constants.whiteColor),
-          titleMedium: Styles().getMediumStyle(
-              fontSize: FontSize.s16, color: Constants.whiteColor),
-          bodyLarge: Styles().getRegularStyle(color: Constants.whiteColor),
-          bodySmall: Styles().getRegularStyle(color: Constants.whiteColor),
-        ),
-      ),
-      home: const SplashView(),
+      theme: CustomThemeData.themeData,
+      routerConfig: AppRouter.router,
     );
   }
 }

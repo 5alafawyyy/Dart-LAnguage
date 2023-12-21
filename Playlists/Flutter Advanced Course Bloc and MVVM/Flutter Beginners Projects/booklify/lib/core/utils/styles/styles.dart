@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'fonts.dart';
 
 class Styles {
-  TextStyle _getTextStyle(
+  TextStyle getTextStyle(
     double fontSize,
     FontWeight fontWeight,
     Color color,
@@ -21,7 +21,7 @@ class Styles {
     double fontSize = FontSize.s12,
     required Color color,
   }) {
-    return _getTextStyle(
+    return getTextStyle(
       fontSize,
       FontWeightManager.regular,
       color,
@@ -33,7 +33,7 @@ class Styles {
     double fontSize = FontSize.s12,
     required Color color,
   }) {
-    return _getTextStyle(
+    return getTextStyle(
       fontSize,
       FontWeightManager.medium,
       color,
@@ -45,7 +45,7 @@ class Styles {
     double fontSize = FontSize.s12,
     required Color color,
   }) {
-    return _getTextStyle(
+    return getTextStyle(
       fontSize,
       FontWeightManager.light,
       color,
@@ -57,7 +57,7 @@ class Styles {
     double fontSize = FontSize.s20,
     required Color color,
   }) {
-    return _getTextStyle(
+    return getTextStyle(
       fontSize,
       FontWeightManager.bold,
       color,
@@ -69,7 +69,7 @@ class Styles {
     double fontSize = FontSize.s12,
     required Color color,
   }) {
-    return _getTextStyle(
+    return getTextStyle(
       fontSize,
       FontWeightManager.semiBold,
       color,
