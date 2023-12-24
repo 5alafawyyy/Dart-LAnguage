@@ -1,5 +1,5 @@
 export '../../../../../core/shared/widgets/custom_app_bar.dart';
-export 'best_seller_books_list_view.dart';
+export 'newest_books_list_view.dart';
 export 'custom_home_title_section.dart';
 export 'featured_books_list_view.dart';
 export 'book_rating.dart';

@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
             FeaturedBooksListView(),
             SizedBox(height: 50.0),
             CustomHomeTitleSection(),
-            BestSellerBooksListView()
+            NewestBooksListView()
           ],
         ),
       ),
