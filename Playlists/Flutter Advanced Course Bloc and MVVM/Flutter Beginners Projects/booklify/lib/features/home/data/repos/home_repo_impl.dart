@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 
 import '../../../../core/errors/failure.dart';
 import '../../../../core/service/api_service.dart';
@@ -21,7 +22,11 @@ class HomeRepoImpl implements BaseHomeRepo {
       }
       return right(books);
     } catch (e) {
-      return left(ServerFailure());
+      if (e is DioException){
+        return left(ServerFailure.fromDioException(e));
+      }else{
+        return left(ServerFailure(e.toString()));
+      }
     }
   }
 
