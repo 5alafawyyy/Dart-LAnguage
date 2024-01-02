@@ -4,9 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../../core/shared/widgets/shared_widgets.dart';
 
 class BookDetailsViewAppBar extends StatelessWidget {
-  const BookDetailsViewAppBar({
-    super.key,
-  });
+  const BookDetailsViewAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {

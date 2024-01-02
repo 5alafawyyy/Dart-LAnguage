@@ -17,11 +17,11 @@ class BooklifyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) =>
-              FeaturedBooksCubit(ServiceLocator().sl.get<HomeRepoImpl>()),
+              FeaturedBooksCubit(ServiceLocator().sl.get<HomeRepoImpl>())..fetchFeaturedBooks(),
         ),
         BlocProvider(
           create: (context) =>
-              NewestBooksCubit(ServiceLocator().sl.get<HomeRepoImpl>()),
+              NewestBooksCubit(ServiceLocator().sl.get<HomeRepoImpl>())..fetchNewestBooks(),
         ),
       ],
       child: MaterialApp.router(

@@ -9,6 +9,9 @@ class HomeViewBody extends StatelessWidget {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height,
       child: const SingleChildScrollView(
+        physics: BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

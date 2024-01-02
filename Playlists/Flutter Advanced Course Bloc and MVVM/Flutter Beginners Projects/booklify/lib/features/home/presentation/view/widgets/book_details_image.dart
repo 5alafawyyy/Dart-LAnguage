@@ -5,16 +5,16 @@ import '../../../../../core/shared/widgets/shared_widgets.dart';
 class BookDetailsImage extends StatelessWidget {
   const BookDetailsImage({
     super.key,
-    required this.assetName,
+    required this.networkImageUrl,
   });
-  final String assetName;
+  final String networkImageUrl;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.sizeOf(context).height / 2.8,
       child: BookImage(
-        assetName: assetName,
+        networkImageUrl: networkImageUrl,
         aspectRatio: 2 / 3,
       ),
     );

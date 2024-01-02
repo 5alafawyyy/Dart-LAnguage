@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../../home/presentation/view/widgets/book_list_view_item.dart';
 import 'widgets.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -28,20 +27,21 @@ class SearchBooksListView extends StatelessWidget {
     return Expanded(
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * 0.78,
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: 10,
-          itemBuilder: (BuildContext context, int index) {
-            return BookListViewItem(
-              assetName: dummyData[index].assetName,
-              titleText: dummyData[index].titleText,
-              auther: dummyData[index].auther,
-              price: dummyData[index].price,
-              rate: dummyData[index].rate,
-              noOfPeopleWatched: dummyData[index].noOfPeopleWatched,
-            );
-          },
-        ),
+        // child: ListView.builder(
+        //   shrinkWrap: true,
+        //   itemCount: 10,
+        //   itemBuilder: (BuildContext context, int index) {
+        //     return BookListViewItem(
+        //       networkImageUrl: dummyData[index].networkImageUrl,
+        //       titleText: dummyData[index].titleText,
+        //       auther: dummyData[index].auther,
+        //       price: dummyData[index].price,
+        //       rate: dummyData[index].rate,
+        //       noOfPeopleWatched: dummyData[index].noOfPeopleWatched,
+        //     );
+        //   },
+        // ),
+     
       ),
     );
   }

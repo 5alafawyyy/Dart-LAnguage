@@ -17,7 +17,7 @@ class ServerFailure extends Failure {
   factory ServerFailure.fromDioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection timeout');
+        return ServerFailure('Connnection timeout');
       case DioExceptionType.sendTimeout:
         return ServerFailure('Send timeout');
       case DioExceptionType.receiveTimeout:

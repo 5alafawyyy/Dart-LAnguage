@@ -1,28 +1,33 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/assets/assets.dart';
+import '../../../data/book_model/book_model.dart';
+
 import 'widgets.dart';
 
 class BookDetailsData extends StatelessWidget {
-  const BookDetailsData({super.key});
+  const BookDetailsData({
+    super.key,
+    required this.book,
+  });
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         BookDetailsImage(
-          assetName: AssetsData.bookTest1,
+          networkImageUrl: book.volumeInfo.imageLinks.thumbnail,
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         BookDetailsDescription(
-          titleText: 'The Jungle Book',
-          auther: 'Rudyard Kipling',
-          rate: 4.8,
-          noOfPeopleWatched: 5689,
+          titleText: book.volumeInfo.title!,
+          auther: book.volumeInfo.authors![0],
+          rate: book.volumeInfo.averageRating?.toDouble() ?? 0,
+          noOfPeopleWatched: book.volumeInfo.ratingsCount ?? 0,
         ),
-        SizedBox(height: 20.0),
-        BookDetailsButton(),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
+        const BookDetailsButton(),
+        const SizedBox(height: 20.0),
       ],
     );
   }

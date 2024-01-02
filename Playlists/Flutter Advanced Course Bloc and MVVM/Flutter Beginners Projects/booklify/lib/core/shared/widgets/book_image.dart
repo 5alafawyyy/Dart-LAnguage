@@ -1,13 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BookImage extends StatelessWidget {
   const BookImage({
     super.key,
-    required this.assetName,
+    required this.networkImageUrl,
     required this.aspectRatio,
   });
 
-  final String assetName;
+  final String networkImageUrl;
   final double aspectRatio;
 
   @override
@@ -18,8 +19,8 @@ class BookImage extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           image: DecorationImage(
-            image: AssetImage(
-              assetName,
+            image: CachedNetworkImageProvider(
+              networkImageUrl,
             ),
             fit: BoxFit.fill,
           ),

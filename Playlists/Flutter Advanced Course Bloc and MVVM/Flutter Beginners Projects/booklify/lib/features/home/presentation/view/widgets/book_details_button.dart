@@ -5,7 +5,8 @@ import 'package:booklify/core/utils/styles/fonts.dart';
 import '../../../../../core/shared/widgets/custom_text_rich.dart';
 
 class BookDetailsButton extends StatelessWidget {
-  const BookDetailsButton({super.key});
+  const BookDetailsButton({super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +26,8 @@ class BookDetailsButton extends StatelessWidget {
               ),
               child: const Center(
                 child: CustomTextRich(
-                  text: '19.99',
-                  richText: '€',
+                  text: 'Free',
+                  richText: ' ',
                   textColor: Constants.blackColor,
                   richTextFontSize: FontSize.s16,
                 ),

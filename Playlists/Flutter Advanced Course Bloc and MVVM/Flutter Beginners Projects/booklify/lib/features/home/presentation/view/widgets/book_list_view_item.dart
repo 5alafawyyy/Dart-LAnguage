@@ -1,5 +1,6 @@
 import 'package:booklify/core/utils/router/routes_string.dart';
 import 'package:booklify/core/shared/widgets/custom_text_rich.dart';
+import 'package:booklify/features/home/data/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -11,26 +12,19 @@ import 'book_rating.dart';
 class BookListViewItem extends StatelessWidget {
   const BookListViewItem({
     super.key,
-    required this.assetName,
-    required this.titleText,
-    required this.auther,
-    required this.price,
-    required this.rate,
-    required this.noOfPeopleWatched,
+    required this.book,
   });
-  final String assetName;
-  final String titleText;
-  final String auther;
-  final double price;
-  final double rate;
-  final int noOfPeopleWatched;
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: InkWell(
         onTap: () {
-          GoRouter.of(context).push(RoutesStrings.bookDetailsView);
+          GoRouter.of(context).push(
+            RoutesStrings.bookDetailsView,
+            extra: book,
+          );
         },
         splashColor: Constants.splashColor,
         child: SizedBox(
@@ -40,7 +34,7 @@ class BookListViewItem extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: BookImage(
-                  assetName: assetName,
+                  networkImageUrl: book.volumeInfo.imageLinks.thumbnail,
                   aspectRatio: 1.8 / 4,
                 ),
               ),
@@ -51,7 +45,7 @@ class BookListViewItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      titleText,
+                      book.volumeInfo.title!,
                       style: ThemeData().textTheme.headlineLarge!.copyWith(
                             color: Constants.whiteColor,
                             fontSize: FontSize.s18,
@@ -61,7 +55,7 @@ class BookListViewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      auther,
+                      book.volumeInfo.authors![0],
                       style: ThemeData().textTheme.titleMedium!.copyWith(
                             color: Constants.greyColor,
                             fontSize: FontSize.s16,
@@ -72,13 +66,13 @@ class BookListViewItem extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        CustomTextRich(
-                          text: '$price',
-                          richText: ' €',
+                        const CustomTextRich(
+                          text: 'Free',
+                          richText: '',
                         ),
                         BookRating(
-                          rate: rate,
-                          noOfPeopleWatched: noOfPeopleWatched,
+                          rate: book.volumeInfo.averageRating?.toDouble() ?? 0,
+                          noOfPeopleWatched: book.volumeInfo.ratingsCount ?? 0,
                         )
                       ],
                     )
@@ -92,102 +86,3 @@ class BookListViewItem extends StatelessWidget {
     );
   }
 }
-
-List<BookListViewItem> dummyData = const [
-  BookListViewItem(
-    assetName: 'assets/images/book_4.png',
-    titleText: 'Harry Potter and the Goblet of Fire',
-    auther: 'J.K. Rowling',
-    price: 19.99,
-    rate: 4.8,
-    noOfPeopleWatched: 2390,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_1.png',
-    titleText: 'The Jungle Book',
-    auther: 'Rudyard Kipling',
-    price: 24.99,
-    rate: 4.5,
-    noOfPeopleWatched: 5689,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_5.png',
-    titleText: 'Star Wars Return of the Jedi',
-    auther: 'James Kahn',
-    price: 19.99,
-    rate: 4.2,
-    noOfPeopleWatched: 2564,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_4.png',
-    titleText: 'Harry Potter and the Goblet of Fire',
-    auther: 'J.K. Rowling',
-    price: 19.99,
-    rate: 4.8,
-    noOfPeopleWatched: 2390,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_1.png',
-    titleText: 'The Jungle Book',
-    auther: 'Rudyard Kipling',
-    price: 24.99,
-    rate: 4.5,
-    noOfPeopleWatched: 5689,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_5.png',
-    titleText: 'Star Wars Return of the Jedi',
-    auther: 'James Kahn',
-    price: 19.99,
-    rate: 4.2,
-    noOfPeopleWatched: 2564,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_4.png',
-    titleText: 'Harry Potter and the Goblet of Fire',
-    auther: 'J.K. Rowling',
-    price: 19.99,
-    rate: 4.8,
-    noOfPeopleWatched: 2390,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_1.png',
-    titleText: 'The Jungle Book',
-    auther: 'Rudyard Kipling',
-    price: 24.99,
-    rate: 4.5,
-    noOfPeopleWatched: 5689,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_5.png',
-    titleText: 'Star Wars Return of the Jedi',
-    auther: 'James Kahn',
-    price: 19.99,
-    rate: 4.2,
-    noOfPeopleWatched: 2564,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_4.png',
-    titleText: 'Harry Potter and the Goblet of Fire',
-    auther: 'J.K. Rowling',
-    price: 19.99,
-    rate: 4.8,
-    noOfPeopleWatched: 2390,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_1.png',
-    titleText: 'The Jungle Book',
-    auther: 'Rudyard Kipling',
-    price: 24.99,
-    rate: 4.5,
-    noOfPeopleWatched: 5689,
-  ),
-  BookListViewItem(
-    assetName: 'assets/images/book_5.png',
-    titleText: 'Star Wars Return of the Jedi',
-    auther: 'James Kahn',
-    price: 19.99,
-    rate: 4.2,
-    noOfPeopleWatched: 2564,
-  ),
-];
