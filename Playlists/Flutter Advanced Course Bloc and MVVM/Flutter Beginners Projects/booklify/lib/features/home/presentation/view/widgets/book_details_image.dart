@@ -12,7 +12,7 @@ class BookDetailsImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height / 2.8,
+      height: MediaQuery.sizeOf(context).height / 3.2,
       child: BookImage(
         networkImageUrl: networkImageUrl,
         aspectRatio: 2 / 3,

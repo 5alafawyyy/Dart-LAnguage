@@ -8,8 +8,8 @@ class BookRating extends StatelessWidget {
     super.key,
     required this.rate,
     required this.noOfPeopleWatched,
-    this.iconFontSize = FontSize.s24,
-    this.rateFontSize = FontSize.s20,
+    this.iconFontSize = FontSize.s18,
+    this.rateFontSize = FontSize.s16,
     this.noOfPeopleWatchedFontSize = FontSize.s14,
     this.reteFontWeight = FontWeightManager.regular,
   });

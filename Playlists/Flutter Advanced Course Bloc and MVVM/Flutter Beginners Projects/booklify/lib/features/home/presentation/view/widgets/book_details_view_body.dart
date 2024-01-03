@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/book_model/book_model.dart';
-import 'suggestion_books_images.dart';
-import 'suggestion_books_title.dart';
+import 'similar_books.dart';
+import 'similar_books_title.dart';
 import 'widgets.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -19,8 +19,8 @@ class BookDetailsViewBody extends StatelessWidget {
         children: [
           const BookDetailsViewAppBar(),
           BookDetailsData(book: book),
-          const SuggestionBooksTitle(),
-          SuggestionBooksImages(book: book),
+          const SimilarBooksTitle(),
+          SimilarBooks(book: book),
         ],
       ),
     );

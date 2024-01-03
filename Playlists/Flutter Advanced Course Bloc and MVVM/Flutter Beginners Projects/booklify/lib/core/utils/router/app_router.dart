@@ -1,8 +1,13 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../features/home/data/book_model/book_model.dart';
+import '../../../features/home/data/repos/home_repo_impl.dart';
+import '../../../features/home/presentation/view/pdf_viewer_view.dart';
+import '../../../features/home/presentation/view_model/similar_books_cubit/similar_books_cubit.dart';
 import '../../../features/views.dart';
+import '../service_locator/service_locator.dart';
 import 'routes_string.dart';
 
 abstract class AppRouter {
@@ -20,7 +25,21 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: RoutesStrings.bookDetailsView,
-        builder: (BuildContext context, GoRouterState state) => BookDetailsView(
+        builder: (BuildContext context, GoRouterState state) => BlocProvider(
+          create: (context) =>
+              SimilarBooksCubit(ServiceLocator().sl.get<HomeRepoImpl>())
+                ..fetchSimilarBooks(
+                  category:
+                      (state.extra as BookModel).volumeInfo.categories![0],
+                ),
+          child: BookDetailsView(
+            book: state.extra as BookModel,
+          ),
+        ),
+      ),
+      GoRoute(
+        path: RoutesStrings.pdfViewerView,
+        builder: (BuildContext context, GoRouterState state) => PdfViewerView(
           book: state.extra as BookModel,
         ),
       ),

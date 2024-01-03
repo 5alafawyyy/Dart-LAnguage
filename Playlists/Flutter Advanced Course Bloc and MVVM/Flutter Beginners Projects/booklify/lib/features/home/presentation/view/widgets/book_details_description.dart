@@ -27,7 +27,7 @@ class BookDetailsDescription extends StatelessWidget {
           titleText,
           style: ThemeData().textTheme.displayLarge!.copyWith(
                 color: Constants.whiteColor,
-                fontSize: FontSize.s28,
+                fontSize: FontSize.s20,
                 fontWeight: FontWeightManager.regular,
               ),
           maxLines: 2,

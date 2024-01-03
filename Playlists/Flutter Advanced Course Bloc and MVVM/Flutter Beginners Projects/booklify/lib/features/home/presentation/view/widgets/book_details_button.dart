@@ -5,14 +5,19 @@ import 'package:booklify/core/utils/styles/fonts.dart';
 import '../../../../../core/shared/widgets/custom_text_rich.dart';
 
 class BookDetailsButton extends StatelessWidget {
-  const BookDetailsButton({super.key,
+  const BookDetailsButton({
+    super.key,
+    required this.onPressed,
+    required this.canBeOpened,
   });
+  final void Function() onPressed;
+  final bool canBeOpened;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.sizeOf(context).height * 0.07,
-      width: MediaQuery.sizeOf(context).width * 0.7,
+      height: MediaQuery.sizeOf(context).height * 0.055,
+      width: MediaQuery.sizeOf(context).width * 0.6,
       child: Row(
         children: [
           Expanded(
@@ -29,7 +34,7 @@ class BookDetailsButton extends StatelessWidget {
                   text: 'Free',
                   richText: ' ',
                   textColor: Constants.blackColor,
-                  richTextFontSize: FontSize.s16,
+                  richTextFontSize: FontSize.s12,
                 ),
               ),
             ),
@@ -44,12 +49,12 @@ class BookDetailsButton extends StatelessWidget {
                 color: Constants.splashColor,
               ),
               child: TextButton(
-                onPressed: () {},
+                onPressed: onPressed,
                 child: Center(
                   child: Text(
-                    'Free preview',
+                    canBeOpened ? 'Preview' : 'Free Preview',
                     style: CustomTextTheme.textTheme.bodyLarge!.copyWith(
-                      fontSize: FontSize.s16,
+                      fontSize: canBeOpened ? FontSize.s16 : FontSize.s12,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,

@@ -62,7 +62,7 @@ class BookListViewItem extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

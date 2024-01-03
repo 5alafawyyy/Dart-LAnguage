@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/constants/constants.dart';
 import '../../../../../core/utils/styles/fonts.dart';
 
-class SuggestionBooksTitle extends StatelessWidget {
-  const SuggestionBooksTitle({
+class SimilarBooksTitle extends StatelessWidget {
+  const SimilarBooksTitle({
     super.key,
   });
 

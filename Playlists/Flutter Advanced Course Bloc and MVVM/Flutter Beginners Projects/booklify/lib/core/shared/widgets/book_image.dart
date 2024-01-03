@@ -33,7 +33,7 @@ class BookImage extends StatelessWidget {
                   void Function(void Function()) setState) {
                 Future.delayed(const Duration(seconds: 2), () {
                   errWidget = const Icon(Icons.image_not_supported_rounded);
-                  setState((){});
+                  setState(() {});
                 });
                 return errWidget;
               },
