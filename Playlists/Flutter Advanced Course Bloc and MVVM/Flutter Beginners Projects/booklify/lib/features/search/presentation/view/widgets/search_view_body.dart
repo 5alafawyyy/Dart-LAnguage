@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'search_books_results_view.dart';
 import 'widgets.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -7,41 +9,16 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(30.0),
+      padding: EdgeInsets.only(
+        top: 50.0,
+        right: 18.0,
+      ),
       child: Column(
         children: [
           CustomSearchTextForm(),
           SizedBox(height: 16),
-          SearchBooksListView(),
+          SearchBooksResultsView(),
         ],
-      ),
-    );
-  }
-}
-
-class SearchBooksListView extends StatelessWidget {
-  const SearchBooksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-        height: MediaQuery.sizeOf(context).height * 0.78,
-        // child: ListView.builder(
-        //   shrinkWrap: true,
-        //   itemCount: 10,
-        //   itemBuilder: (BuildContext context, int index) {
-        //     return BookListViewItem(
-        //       networkImageUrl: dummyData[index].networkImageUrl,
-        //       titleText: dummyData[index].titleText,
-        //       auther: dummyData[index].auther,
-        //       price: dummyData[index].price,
-        //       rate: dummyData[index].rate,
-        //       noOfPeopleWatched: dummyData[index].noOfPeopleWatched,
-        //     );
-        //   },
-        // ),
-     
       ),
     );
   }

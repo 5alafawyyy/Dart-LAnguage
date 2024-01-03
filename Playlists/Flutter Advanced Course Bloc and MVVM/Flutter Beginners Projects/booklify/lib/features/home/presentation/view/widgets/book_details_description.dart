@@ -15,7 +15,7 @@ class BookDetailsDescription extends StatelessWidget {
 
   final String titleText;
   final String auther;
-  final double rate;
+  final String rate;
   final int noOfPeopleWatched;
 
   @override

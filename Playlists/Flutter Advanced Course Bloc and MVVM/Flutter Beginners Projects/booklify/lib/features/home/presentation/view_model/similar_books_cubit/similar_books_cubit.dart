@@ -15,11 +15,14 @@ class SimilarBooksCubit extends Cubit<SimilarBooksState> {
     try {
       final books = await homeRepo.fetchSimilarBooks(category: category);
       books.fold((failure) {
+        print(books);
         emit(SimilarBooksError(errMessage: failure.errMessage));
       }, (books) {
+        print(books);
         emit(SimilarBooksLoaded(books: books));
       });
     } catch (e) {
+      print(e);
       emit(SimilarBooksError(errMessage: e.toString()));
     }
   }

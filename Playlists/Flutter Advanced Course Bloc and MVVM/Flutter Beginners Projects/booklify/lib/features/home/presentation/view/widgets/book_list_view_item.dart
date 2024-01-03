@@ -71,7 +71,10 @@ class BookListViewItem extends StatelessWidget {
                           richText: '',
                         ),
                         BookRating(
-                          rate: book.volumeInfo.averageRating?.toDouble() ?? 0,
+                          rate: ((book.volumeInfo.averageRating) == null ||
+                                  book.volumeInfo.averageRating == 'null')
+                              ? '0'
+                              : book.volumeInfo.averageRating!.toString(),
                           noOfPeopleWatched: book.volumeInfo.ratingsCount ?? 0,
                         )
                       ],

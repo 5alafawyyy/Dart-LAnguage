@@ -37,8 +37,7 @@ class SimilarBooks extends StatelessWidget {
                       return Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: Container(
-                          width: MediaQuery.of(context).size.width /
-                              6, // Adjust the width as needed
+                          width: MediaQuery.of(context).size.width / 6,
                           decoration: BoxDecoration(
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(10),
@@ -54,41 +53,42 @@ class SimilarBooks extends StatelessWidget {
         } else if (state is SimilarBooksLoaded) {
           List<BookModel> filteredBooks =
               state.books.where((book) => book.id != this.book.id).toList();
-          print(
-            MediaQuery.sizeOf(context).height / 6,
-          );
-          return SizedBox(
-            height: MediaQuery.sizeOf(context).height / 6,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: SizedBox(
-                height: MediaQuery.sizeOf(context).height / 6.5,
-                child: ListView.builder(
-                  addAutomaticKeepAlives: false,
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  itemCount: filteredBooks.length,
-                  itemBuilder: (context, index) {
-                    return InkWell(
-                      onTap: () {
-                        GoRouter.of(context).push(
-                          RoutesStrings.bookDetailsView,
-                          extra: filteredBooks[index],
-                        );
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: BookImage(
-                          networkImageUrl: filteredBooks[index]
-                                  .volumeInfo
-                                  .imageLinks
-                                  ?.thumbnail ??
-                              '',
-                          aspectRatio: 2.5 / 4,
+
+          return Align(
+            alignment: Alignment.centerLeft,
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height / 6,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 30),
+                child: SizedBox(
+                  height: MediaQuery.sizeOf(context).height / 6.5,
+                  child: ListView.builder(
+                    addAutomaticKeepAlives: false,
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: filteredBooks.length,
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          GoRouter.of(context).push(
+                            RoutesStrings.bookDetailsView,
+                            extra: filteredBooks[index],
+                          );
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: BookImage(
+                            networkImageUrl: filteredBooks[index]
+                                    .volumeInfo
+                                    .imageLinks
+                                    ?.thumbnail ??
+                                '',
+                            aspectRatio: 2.5 / 4,
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             ),

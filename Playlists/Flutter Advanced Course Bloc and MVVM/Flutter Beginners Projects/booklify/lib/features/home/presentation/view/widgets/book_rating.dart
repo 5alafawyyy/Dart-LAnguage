@@ -14,7 +14,7 @@ class BookRating extends StatelessWidget {
     this.reteFontWeight = FontWeightManager.regular,
   });
 
-  final double rate;
+  final String rate;
   final double rateFontSize;
   final double iconFontSize;
   final int noOfPeopleWatched;
@@ -32,7 +32,7 @@ class BookRating extends StatelessWidget {
         ),
         const SizedBox(width: 4),
         Text(
-          '$rate',
+          (rate == 'null') ? '0' : rate,
           style: ThemeData().textTheme.bodyLarge!.copyWith(
                 color: Constants.whiteColor,
                 fontSize: rateFontSize,

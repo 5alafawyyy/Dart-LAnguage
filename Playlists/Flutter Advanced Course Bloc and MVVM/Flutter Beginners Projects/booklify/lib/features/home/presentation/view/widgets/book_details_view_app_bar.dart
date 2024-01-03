@@ -18,13 +18,14 @@ class BookDetailsViewAppBar extends StatelessWidget {
         splashRadius: 20,
         tooltip: 'Back',
       ),
-      widget2: IconButton(
-        onPressed: () {},
-        icon: const Icon(Icons.shopping_cart_outlined),
-        iconSize: 32.0,
-        splashRadius: 15,
-        tooltip: 'Cart',
-      ),
+      widget2: const SizedBox(),
+      // widget2: IconButton(
+      //   onPressed: () {},
+      //   icon: const Icon(Icons.shopping_cart_outlined),
+      //   iconSize: 32.0,
+      //   splashRadius: 15,
+      //   tooltip: 'Cart',
+      // ),
     );
   }
 }

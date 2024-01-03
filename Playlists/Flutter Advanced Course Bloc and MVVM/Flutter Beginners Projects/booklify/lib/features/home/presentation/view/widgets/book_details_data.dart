@@ -26,7 +26,7 @@ class BookDetailsData extends StatelessWidget {
         BookDetailsDescription(
           titleText: book.volumeInfo.title!,
           auther: book.volumeInfo.authors![0],
-          rate: book.volumeInfo.averageRating?.toDouble() ?? 0,
+          rate: book.volumeInfo.averageRating?.toString() ?? '0',
           noOfPeopleWatched: book.volumeInfo.ratingsCount ?? 0,
         ),
         const SizedBox(height: 20.0),
