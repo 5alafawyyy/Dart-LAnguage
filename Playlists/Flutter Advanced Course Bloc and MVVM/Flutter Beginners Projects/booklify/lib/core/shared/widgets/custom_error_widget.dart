@@ -19,6 +19,7 @@ class CustomErrorWidget extends StatelessWidget {
         style: Styles().getMediumStyle(
           color: Constants.whiteColor,
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }

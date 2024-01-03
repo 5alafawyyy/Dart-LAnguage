@@ -34,7 +34,7 @@ class BookListViewItem extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: BookImage(
-                  networkImageUrl: book.volumeInfo.imageLinks.thumbnail,
+                  networkImageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
                   aspectRatio: 1.8 / 4,
                 ),
               ),

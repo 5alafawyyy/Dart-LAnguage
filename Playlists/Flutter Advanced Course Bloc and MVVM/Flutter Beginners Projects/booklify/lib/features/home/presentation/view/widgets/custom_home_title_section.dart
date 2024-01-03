@@ -12,10 +12,10 @@ class CustomHomeTitleSection extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 24.0),
       child: Text(
-        'Best Seller',
+        'Newset Books',
         style: ThemeData().textTheme.titleMedium!.copyWith(
               color: Constants.whiteColor,
-              fontSize: FontSize.s22,
+              fontSize: FontSize.s16,
             ),
       ),
     );

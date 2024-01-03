@@ -33,7 +33,7 @@ class FeaturedBooksListViewItem extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: aspectRatio,
                 child: CachedNetworkImage(
-                  imageUrl: book.volumeInfo.imageLinks.thumbnail,
+                  imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
                   fit: BoxFit.fill,
                   placeholder: (context, url) => Shimmer.fromColors(
                       baseColor: Colors.grey.shade300,

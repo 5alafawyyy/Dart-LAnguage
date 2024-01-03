@@ -16,7 +16,7 @@ class BookDetailsData extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         BookDetailsImage(
-          networkImageUrl: book.volumeInfo.imageLinks.thumbnail,
+          networkImageUrl: book.volumeInfo.imageLinks?.thumbnail?? '',
         ),
         const SizedBox(height: 20.0),
         BookDetailsDescription(

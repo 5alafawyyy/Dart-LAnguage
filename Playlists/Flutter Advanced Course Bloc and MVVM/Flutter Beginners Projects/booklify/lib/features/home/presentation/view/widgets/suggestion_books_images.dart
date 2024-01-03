@@ -76,9 +76,10 @@ class SuggestionBooksImages extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 8.0),
                             child: BookImage(
                               networkImageUrl: filteredBooks[index]
-                                  .volumeInfo
-                                  .imageLinks
-                                  .thumbnail,
+                                      .volumeInfo
+                                      .imageLinks
+                                      ?.thumbnail ??
+                                  '',
                               aspectRatio: 2.5 / 4,
                             ),
                           ),
